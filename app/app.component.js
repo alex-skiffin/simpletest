@@ -1,10 +1,11 @@
-(function(app) {
+(function (app) {
   app.AppComponent =
     ng.core.Component({
       selector: 'my-app',
-      template: '<welcome></welcome>'
+      template: `<nav></nav>
+<router-outlet></router-outlet>`
     })
-    .Class({
-      constructor: function() {}
-    });
+      .Class({
+        constructor: function () { }
+      });
 })(window.app || (window.app = {}));
