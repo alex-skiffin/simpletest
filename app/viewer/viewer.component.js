@@ -1,4 +1,5 @@
 app.ViewerComponent = ViewerComponent;
+app.ViewerComponent.prototype.Users=[];
 ViewerComponent.annotations = [
   new ng.core.Component({
     selector: 'viewer',
@@ -22,5 +23,8 @@ app.ViewerComponent.prototype.showTiles = function () {
   app.ViewerComponent.prototype.isTiles = true;
 };
 function ViewerComponent() {
+  loadJSON('mock.json',
+         function(data) { app.ViewerComponent.prototype.Users=data; },
+         function(xhr) { alert(xhr); });
   app.ViewerComponent.prototype.showTable();
 }

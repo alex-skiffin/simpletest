@@ -1,10 +1,10 @@
-<h1>view page</h1>
+<h1>View page</h1>
 <button [disabled]='isTable' (click)="showTable()">table</button>
 <button [disabled]='isCards' (click)="showCards()">cards</button>
 <button [disabled]='isTiles' (click)="showTiles()">tiles</button>
 <br/>
-<table *ngIf='isTable'></table>
-<cards *ngIf='isCards'></cards>
-<tiles *ngIf='isTiles'></tiles>
+<table *ngIf='isTable' [users]='Users'></table>
+<cards *ngIf='isCards' [users]='Users'></cards>
+<tiles *ngIf='isTiles' [users]='Users'></tiles>
 <br/>
 <button routerLink="/welcome" routerLinkActive="active">Go to welcome page</button>
