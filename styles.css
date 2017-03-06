@@ -15,7 +15,15 @@ thead tr {
 #tiles {
   width: 175px;
   height: 40px;
-  display: inline-block;
-  background-color: lightgray;
+  display: inline-table;
   text-align: center;
+}
+.tile-users {
+  border:1px solid black;
+  margin: 5px;
+    width: 170px;
+    height: 60px;
+}
+.tile-head{
+  background-color: lightgray;
 }

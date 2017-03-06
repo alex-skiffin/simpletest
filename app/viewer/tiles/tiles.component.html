@@ -1,1 +1,13 @@
 <h1>Tiles</h1>
+
+<div>
+    <div *ngFor="let depart of departments" id="tiles">
+        <div>
+            <div class="tile-head">{{depart}}&nbsp;</div>
+            <div *ngFor="let user of users | filter : 'department' : depart" class="tile-users">
+                <b>{{user.name}}&nbsp;</b>
+                <p>{{user.phone}}&nbsp;</p>
+            </div>
+        </div>
+    </div>
+</div>
