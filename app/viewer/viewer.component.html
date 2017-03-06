@@ -3,7 +3,7 @@
 <button [disabled]='isCards' (click)="showCards()">cards</button>
 <button [disabled]='isTiles' (click)="showTiles()">tiles</button>
 <br/>
-<table *ngIf='isTable' [users]='Users'></table>
+<view-table *ngIf='isTable' [users]='Users'></view-table>
 <cards *ngIf='isCards' [users]='Users'></cards>
 <tiles *ngIf='isTiles' [users]='Users'></tiles>
 <br/>

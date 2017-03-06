@@ -1,0 +1,21 @@
+thead tr {
+    border-color: black;
+}
+#cards {
+}
+.card {
+  width: 175px;
+  height: 275px;
+  margin: 5px;
+  display: inline-block;
+  background-color: lightgray;
+  padding: 5px;
+  text-align: center;
+}
+#tiles {
+  width: 175px;
+  height: 40px;
+  display: inline-block;
+  background-color: lightgray;
+  text-align: center;
+}

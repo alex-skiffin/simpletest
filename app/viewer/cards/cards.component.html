@@ -1,1 +1,9 @@
 <h1>Cards</h1>
+<div id="cadrs">
+    <div *ngFor="let user of users" class="card">
+        <p>{{user.name}}&nbsp;</p>
+        <img src="content/user.png" />
+        <p>{{user.department}}&nbsp;</p>
+        <p>{{user.phone}}&nbsp;</p>
+    </div>
+</div>
