@@ -3,6 +3,15 @@
 <button [disabled]='isCards' (click)="showCards()">cards</button>
 <button [disabled]='isTiles' (click)="showTiles()">tiles</button>
 <br/>
+<p>Sort by:</p>
+<button (click)="sortByName()">Name{{descByName? ARROW_UP:ARROW_DOWN}}</button>
+<button [disabled]='isCards || isTiles' (click)="sortByAge()">Age{{descByAge? ARROW_UP:ARROW_DOWN}}</button>
+<button [disabled]='isCards || isTiles' (click)="sortByGender()">Gender{{descByGender? ARROW_UP:ARROW_DOWN}}</button>
+<button [disabled]='isTiles' (click)="sortByDepartment()">Department{{descByDepartment? ARROW_UP:ARROW_DOWN}}</button>
+<button [disabled]='isTiles || isCards' (click)="sortByAddress()">Address{{descByAddress? ARROW_UP:ARROW_DOWN}}</button>
+<button (click)="sortByPhone()">Phone{{descByPhone? ARROW_UP:ARROW_DOWN}}</button>
+<button [disabled]='isCards || isTiles' (click)="sortByEmail()">Email{{descByEmail? ARROW_UP:ARROW_DOWN}}</button>
+<br/>
 <view-table *ngIf='isTable' [users]='Users'></view-table>
 <cards *ngIf='isCards' [users]='Users'></cards>
 <tiles *ngIf='isTiles' [users]='Users'></tiles>
