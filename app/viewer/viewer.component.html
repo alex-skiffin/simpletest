@@ -3,7 +3,22 @@
 <button [disabled]='isCards' (click)="showCards()">cards</button>
 <button [disabled]='isTiles' (click)="showTiles()">tiles</button>
 <br/>
-<p>Sort by:</p>
+<br/>
+<div>
+    <label>Search by:</label>
+    <select name="searchFilter" #selectedFilter>
+        <option value="name">Name</option>
+        <option value="age">Age</option>
+        <option value="gender">Gender</option>
+        <option value="department">Department</option>
+        <option value="address">Address</option>
+        <option value="phone">Phone</option>
+        <option value="email">Email</option>
+    </select>
+    <!--<input #textbox type="text" [(ngModel)]="searchText" required />-->
+</div>
+<br/>
+<label>Sort by:</label>
 <button (click)="sortByName()">Name{{descByName? ARROW_UP:ARROW_DOWN}}</button>
 <button [disabled]='isCards || isTiles' (click)="sortByAge()">Age{{descByAge? ARROW_UP:ARROW_DOWN}}</button>
 <button [disabled]='isCards || isTiles' (click)="sortByGender()">Gender{{descByGender? ARROW_UP:ARROW_DOWN}}</button>
