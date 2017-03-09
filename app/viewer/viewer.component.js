@@ -1,5 +1,6 @@
 app.ViewerComponent = ViewerComponent;
 app.ViewerComponent.prototype.Users = [];
+app.ViewerComponent.prototype.filtredUsers = [];
 ViewerComponent.annotations = [
   new ng.core.Component({
     selector: 'viewer',
@@ -31,11 +32,13 @@ app.ViewerComponent.prototype.descByDepartment = false;
 app.ViewerComponent.prototype.descByAddress = false;
 app.ViewerComponent.prototype.descByPhone = false;
 app.ViewerComponent.prototype.descByEmail = false;
+app.ViewerComponent.prototype.selectedFilter = 'Name';
 app.ViewerComponent.prototype.searchText = '';
 function ViewerComponent() {
   loadJSON('mock.json',
     function (data) {
       app.ViewerComponent.prototype.Users = data;
+      app.ViewerComponent.prototype.filtredUsers = app.ViewerComponent.prototype.Users;
       app.ViewerComponent.prototype.sortByName();
     },
     function (xhr) { alert(xhr); });
@@ -76,6 +79,15 @@ app.ViewerComponent.prototype.sortByEmail = function () {
   app.ViewerComponent.prototype.Users.sort(dynamicSort('email', this.descByEmail));
   app.ViewerComponent.prototype.descByEmail = !app.ViewerComponent.prototype.descByEmail;
 };
-app.ViewerComponent.prototype.onSearchInput = function (searchText) {
-  console.log(searchText);
+app.ViewerComponent.prototype.onSearchInput = function (inputText) {
+  app.ViewerComponent.prototype.searchText = inputText;
+  if (app.ViewerComponent.prototype.searchText)
+    app.ViewerComponent.prototype.filtredUsers = app.ViewerComponent.prototype.Users.filter(it =>
+      ('' + it[app.ViewerComponent.prototype.selectedFilter.toLowerCase()]).includes(app.ViewerComponent.prototype.searchText));
+  else
+    app.ViewerComponent.prototype.filtredUsers = app.ViewerComponent.prototype.Users;
+};
+app.ViewerComponent.prototype.changeFilter = function (filter) {
+  app.ViewerComponent.prototype.selectedFilter = filter;
+  console.log(app.ViewerComponent.prototype.selectedFilter);
 };
