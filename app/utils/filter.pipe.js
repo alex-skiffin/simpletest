@@ -1,5 +1,6 @@
 app.FilterPipe = ng.core.Pipe({
-  name: 'filter'
+  name: 'filter',
+  pure: false
 }).Class({
   constructor: function () { },
   transform: function (items, field, value) {
