@@ -62,31 +62,31 @@ function dynamicSort(property, isSortDesc) {
   };
 }
 app.ViewerComponent.prototype.sortByName = function () {
-  app.ViewerComponent.prototype.Users.sort(dynamicSort('name', app.ViewerComponent.prototype.descByName));
+  app.ViewerComponent.prototype.filtredUsers.sort(dynamicSort('name', app.ViewerComponent.prototype.descByName));
   app.ViewerComponent.prototype.descByName = !app.ViewerComponent.prototype.descByName;
 };
 app.ViewerComponent.prototype.sortByAge = function () {
-  app.ViewerComponent.prototype.Users.sort(dynamicSort('age', this.descByAge));
+  app.ViewerComponent.prototype.filtredUsers.sort(dynamicSort('age', this.descByAge));
   app.ViewerComponent.prototype.descByAge = !app.ViewerComponent.prototype.descByAge;
 };
 app.ViewerComponent.prototype.sortByGender = function () {
-  app.ViewerComponent.prototype.Users.sort(dynamicSort('gender', this.descByGender));
+  app.ViewerComponent.prototype.filtredUsers.sort(dynamicSort('gender', this.descByGender));
   app.ViewerComponent.prototype.descByGender = !app.ViewerComponent.prototype.descByGender;
 };
 app.ViewerComponent.prototype.sortByDepartment = function () {
-  app.ViewerComponent.prototype.Users.sort(dynamicSort('department', this.descByDepartment));
+  app.ViewerComponent.prototype.filtredUsers.sort(dynamicSort('department', this.descByDepartment));
   app.ViewerComponent.prototype.descByDepartment = !app.ViewerComponent.prototype.descByDepartment;
 };
 app.ViewerComponent.prototype.sortByAddress = function () {
-  app.ViewerComponent.prototype.Users.sort(dynamicSort('address', this.descByAddress));
+  app.ViewerComponent.prototype.filtredUsers.sort(dynamicSort('address', this.descByAddress));
   app.ViewerComponent.prototype.descByAddress = !app.ViewerComponent.prototype.descByAddress;
 };
 app.ViewerComponent.prototype.sortByPhone = function () {
-  app.ViewerComponent.prototype.Users.sort(dynamicSort('phone', this.descByPhone));
+  app.ViewerComponent.prototype.filtredUsers.sort(dynamicSort('phone', this.descByPhone));
   app.ViewerComponent.prototype.descByPhone = !app.ViewerComponent.prototype.descByPhone;
 };
 app.ViewerComponent.prototype.sortByEmail = function () {
-  app.ViewerComponent.prototype.Users.sort(dynamicSort('email', this.descByEmail));
+  app.ViewerComponent.prototype.filtredUsers.sort(dynamicSort('email', this.descByEmail));
   app.ViewerComponent.prototype.descByEmail = !app.ViewerComponent.prototype.descByEmail;
 };
 app.ViewerComponent.prototype.onSearchInput = function (inputText) {
