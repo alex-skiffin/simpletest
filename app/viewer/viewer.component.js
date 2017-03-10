@@ -9,21 +9,32 @@ ViewerComponent.annotations = [
 ];
 app.ViewerComponent.prototype.ARROW_DOWN = '▲';
 app.ViewerComponent.prototype.ARROW_UP = '▼';
+app.ViewerComponent.prototype.selectedFilter = 'Name';
+app.ViewerComponent.prototype.searchString = '';
+
+app.ViewerComponent.prototype.clearFilter = function () {
+  app.ViewerComponent.prototype.selectedFilter = 'Name';
+  app.ViewerComponent.prototype.searchString = '';
+  app.ViewerComponent.prototype.filtredUsers = app.ViewerComponent.prototype.Users;
+}
 
 app.ViewerComponent.prototype.showTable = function () {
   app.ViewerComponent.prototype.isTable = true;
   app.ViewerComponent.prototype.isCards = false;
   app.ViewerComponent.prototype.isTiles = false;
+  this.clearFilter();
 };
 app.ViewerComponent.prototype.showCards = function () {
   app.ViewerComponent.prototype.isTable = false;
   app.ViewerComponent.prototype.isCards = true;
   app.ViewerComponent.prototype.isTiles = false;
+  this.clearFilter();
 };
 app.ViewerComponent.prototype.showTiles = function () {
   app.ViewerComponent.prototype.isTable = false;
   app.ViewerComponent.prototype.isCards = false;
   app.ViewerComponent.prototype.isTiles = true;
+  this.clearFilter();
 };
 app.ViewerComponent.prototype.descByName = true;
 app.ViewerComponent.prototype.descByAge = false;
@@ -32,8 +43,7 @@ app.ViewerComponent.prototype.descByDepartment = false;
 app.ViewerComponent.prototype.descByAddress = false;
 app.ViewerComponent.prototype.descByPhone = false;
 app.ViewerComponent.prototype.descByEmail = false;
-app.ViewerComponent.prototype.selectedFilter = 'Name';
-app.ViewerComponent.prototype.searchText = '';
+
 function ViewerComponent() {
   loadJSON('mock.json',
     function (data) {
@@ -80,14 +90,14 @@ app.ViewerComponent.prototype.sortByEmail = function () {
   app.ViewerComponent.prototype.descByEmail = !app.ViewerComponent.prototype.descByEmail;
 };
 app.ViewerComponent.prototype.onSearchInput = function (inputText) {
-  app.ViewerComponent.prototype.searchText = inputText;
-  if (app.ViewerComponent.prototype.searchText)
+  app.ViewerComponent.prototype.searchString = inputText;
+  if (app.ViewerComponent.prototype.searchString)
     app.ViewerComponent.prototype.filtredUsers = app.ViewerComponent.prototype.Users.filter(it =>
-      ('' + it[app.ViewerComponent.prototype.selectedFilter.toLowerCase()]).includes(app.ViewerComponent.prototype.searchText));
+      ('' + it[app.ViewerComponent.prototype.selectedFilter.toLowerCase()]).includes(app.ViewerComponent.prototype.searchString));
   else
     app.ViewerComponent.prototype.filtredUsers = app.ViewerComponent.prototype.Users;
 };
 app.ViewerComponent.prototype.changeFilter = function (filter) {
   app.ViewerComponent.prototype.selectedFilter = filter;
-  console.log(app.ViewerComponent.prototype.selectedFilter);
+  app.ViewerComponent.prototype.onSearchInput(app.ViewerComponent.prototype.searchString);
 };

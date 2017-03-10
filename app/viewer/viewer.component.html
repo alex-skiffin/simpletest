@@ -15,7 +15,7 @@
         <option value="phone">Phone</option>
         <option *ngIf='isTable' value="email">Email</option>
     </select>
-    <input #searchText type="text" (keyup)="onSearchInput(searchText.value)" required />
+    <input #searchText type="text" [value]="searchString" (keyup)="onSearchInput(searchText.value)" required />
 </div>
 <br/>
 <label>Sort by:</label>

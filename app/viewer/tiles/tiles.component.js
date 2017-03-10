@@ -14,6 +14,6 @@ app.TilesComponent.prototype.onlyUnique = function (value, index, self) {
 };
 function TilesComponent() {
 }
-app.TilesComponent.prototype.ngOnInit = function () {
-    app.TilesComponent.prototype.departments = this.users.filter(this.onlyUnique).map(function(a) {return a.department;});
+app.TilesComponent.prototype.getDeprtments = function () {
+   return this.users.filter(this.onlyUnique).map(function(a) {return a.department;});
 };

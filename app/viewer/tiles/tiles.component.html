@@ -1,7 +1,7 @@
 <h1>Tiles</h1>
 
 <div>
-    <div *ngFor="let depart of departments" id="tiles">
+    <div *ngFor="let depart of getDeprtments()" id="tiles">
         <div>
             <div class="tile-head">{{depart}}&nbsp;</div>
             <div *ngFor="let user of users | filter : 'department' : depart" class="tile-users">
